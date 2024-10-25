@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioLinkie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marlon:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: white; /* Default background color */
+            color: black; /* Default text color */
+            font-family: 'Marlon', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        .content {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        .made-with-love {
+            font-weight: bold;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            font-size: 12px;
+        }
+
+        .enter-message {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10; /* Ensure it's above the content */
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleAnim 10s linear infinite, particleMove 10s linear infinite;
+        }
+
+        @keyframes particleAnim {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes particleMove {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(calc(100vw - 50%), calc(100vh - 50%));
+            }
+        }
+
+        .dark-mode-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
+            background-size: 600% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowText 2s linear infinite;
+        }
+
+        @keyframes rainbowText {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .social-icons a {
+            display: block;
+            margin: 10px 0;
+            color: #6a00ff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        @media (min-width: 600px) {
+            .content {
+                padding: 40px;
+            }
+
+            .name {
+                font-size: 36px;
+            }
+
+            img {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="dark-mode-toggle">
+    <label for="dark-mode-slider">Dark Mode</label>
+    <input type="checkbox" id="dark-mode-slider">
+</div>
+
+<div class="content">
+    <img src="https://i0.wp.com/www.adventureatwork.co/wp-content/uploads/2016/08/rock.jpg?fit=1534%2C1150&ssl=1" alt="Profile Image" id="profile-image">
+    <div class="name" id="username">rights4a</div>
+    <div class="social-icons">
+        <a href="https://ebay.com/coldestsr">Ebay</a>
+        <a href="https://vinted.com/@ayannn.41">Vinted</a>
+        <!-- Add more social links as needed -->
+    </div>
+    <div class="made-with-love">Made with love by @rights4a</div>
+</div>
+
+<div class="enter-message" id="enter-message">Click to Enter</div>
+
+<div class="particles"></div>
+
+<script src="loadingsc.js"></script>
+</body>
+</html>
